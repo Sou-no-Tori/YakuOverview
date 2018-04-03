@@ -4,6 +4,7 @@
 \usepackage{color}
 \usepackage{xcolor}
 \usepackage{etoolbox}
+\usepackage{ifthen}
  
 \newtoggle{newbie}
 \newtoggle{pro}
@@ -11,14 +12,6 @@
 \newcommand{\nonewb}[1]{\iftoggle{newbie}{}{#1}}
 \newcommand{\newbonly}[1]{\iftoggle{newbie}{#1}{}}
 \newcommand{\pronly}[1]{\iftoggle{pro}{#1}{}}
-\newcommand{\open}[1]{\textcolor{green!50!black}{#1}}
-\newcommand{\kuis}[1]{\textcolor{\iftoggle{newbie}{green!50!black}{orange}}{#1}}
-\newcommand{\clos}[1]{\textcolor{red}{#1}}
-\newcommand{\term}[2]{\iftoggle{pro}{#1}{#2}}
-
-\newcommand{\comm}[3]{\item #1 \nonewb{(#2)}\newbonly{\\\emph{#3}}}
-\newcommand{\rare}[2]{\nonewb{\item #1 (#2)}}
-\newcommand{\ykmn}[1]{\pronly{\item #1 (Yakuman)}}
 \newenvironment{yakugroup}[1]
 {
 \section*{#1}
