@@ -2,10 +2,10 @@
 \newcommand{\kuis}[1]{\textcolor{\iftoggle{newbie}{green!50!black}{orange}}{#1}}
 \newcommand{\clos}[1]{\textcolor{red}{#1}}
 
-\newcommand{\comm}[3]{\item #1 \nonewb{(#2 han)}\newbonly{\\\emph{#3}}}
+\newcommand{\comm}[3]{\item[] #1 \nonewb{(#2 han)}\newbonly{\\\emph{#3}}}
 \newcommand{\rare}[3]{\ifthenelse{\equal{#2}{Yakuman}}{\ykmn{#1}}{\noyk{#1}{#2}}}
-\newcommand{\noyk}[2]{\nonewb{\item #1 (#2 han)}}
-\newcommand{\ykmn}[1]{\pronly{\item #1 (Yakuman)}}
+\newcommand{\noyk}[2]{\nonewb{\item[] #1 (#2 han)}}
+\newcommand{\ykmn}[1]{\pronly{\item[] #1 (Yakuman)}}
 
 \newcommand{\rarity}[1]{\comm}
 \newcommand{\openness}[1]{\open}
