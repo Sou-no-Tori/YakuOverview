@@ -6,13 +6,16 @@
 \usepackage{etoolbox}
  
 \newtoggle{newbie}
+\newtoggle{pro}
 
+\newcommand{\nonewb}[1]{\iftoggle{newbie}{}{#1}}
 \newcommand{\open}[1]{\textcolor{green!50!black}{#1}}
 \newcommand{\kuis}[1]{\textcolor{\iftoggle{newbie}{green!50!black}{orange}}{#1}}
 \newcommand{\clos}[1]{\textcolor{red}{#1}}
+\newcommand{\term}[2]{\iftoggle{pro}{#1}{#2}}
 
-\newcommand{\comm}[2]{\item #1 \iftoggle{newbie}{}{(#2)}}
-\newcommand{\rare}[2]{\iftoggle{newbie}{}{\item #1 (#2)}}
+\newcommand{\comm}[2]{\item #1 \nonewb{(#2)}}
+\newcommand{\rare}[2]{\nonewb{\item #1 (#2)}}
 \newenvironment{yakugroup}[1]
 {
 \section*{#1}
@@ -26,7 +29,7 @@
 {
 \vspace*{\fill}
 \begin{multicols}{3}
-\begin{yakugroup}{Terminals and Honors}
+\begin{yakugroup}{\term{Yaochuuhai}{Terminals and Honors}}
     \comm{\open{Yakuhai}}{1 han}
     \comm{\open{Tanyao}}{1 han}
     \rare{\kuis{Chanta}}{2 han}
@@ -39,15 +42,16 @@
     \rare{\open{Chinroutou}}{Yakuman}
 \end{yakugroup}
 
-\begin{yakugroup}{Shuntsu}
+\begin{yakugroup}{\term{Shuntsu}{Runs}}
     \comm{\clos{Pinfu}}{1 han}
     \comm{\clos{Iipeikou}}{1 han}
     \comm{\kuis{Sanshoku Doujun}}{2 han}
     \comm{\kuis{Ikkitsuukan}}{2 han}
     \rare{\kuis{Ryanpeikou}}{3 han}
+    \rare{\clos{Chuuren Poutou}}{Yakuman}
 \end{yakugroup}
 
-\begin{yakugroup}{Koutsu}
+\begin{yakugroup}{\term{Koutsu}{Sets}}
     \comm{\open{Toitoi}}{2 han}
     \rare{\open{Sanankou}}{2 han}
     \rare{\open{Shousangen}}{2 han}
@@ -58,8 +62,8 @@
     \rare{\open{Daisuushi}}{Yakuman}
 \end{yakugroup}
 
-\iftoggle{newbie}{}{
-\begin{yakugroup}{Kantsu}
+\nonewb{
+\begin{yakugroup}{\term{Kantsu}{Quads}}
     \rare{\open{Chankan}}{1 han}
     \rare{\open{Rinshan Kaihou}}{1 han}
     \rare{\open{Sankantsu}}{2 han}
@@ -109,5 +113,8 @@
 \content
 \newpage
 \togglefalse{newbie}
+\content
+\newpage
+\toggletrue{pro}
 \content
 \end{document}
