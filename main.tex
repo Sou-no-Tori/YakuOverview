@@ -9,6 +9,7 @@
 \newtoggle{pro}
 
 \newcommand{\nonewb}[1]{\iftoggle{newbie}{}{#1}}
+\newcommand{\pronly}[1]{\iftoggle{pro}{#1}{}}
 \newcommand{\open}[1]{\textcolor{green!50!black}{#1}}
 \newcommand{\kuis}[1]{\textcolor{\iftoggle{newbie}{green!50!black}{orange}}{#1}}
 \newcommand{\clos}[1]{\textcolor{red}{#1}}
@@ -16,6 +17,7 @@
 
 \newcommand{\comm}[2]{\item #1 \nonewb{(#2)}}
 \newcommand{\rare}[2]{\nonewb{\item #1 (#2)}}
+\newcommand{\ykmn}[1]{\pronly{\item #1 (Yakuman)}}
 \newenvironment{yakugroup}[1]
 {
 \section*{#1}
@@ -35,11 +37,11 @@
     \rare{\kuis{Chanta}}{2 han}
     \rare{\open{Honroutou}}{2 han}
     \rare{\kuis{Junchan}}{3 han}
-    \rare{\open{Daisangen}}{Yakuman}
-    \rare{\open{Tsuuiisou}}{Yakuman}
-    \rare{\open{Shousuushi}}{Yakuman}
-    \rare{\open{Daisuushi}}{Yakuman}
-    \rare{\open{Chinroutou}}{Yakuman}
+    \ykmn{\open{Daisangen}}
+    \ykmn{\open{Tsuuiisou}}
+    \ykmn{\open{Shousuushi}}
+    \ykmn{\open{Daisuushi}}
+    \ykmn{\open{Chinroutou}}
 \end{yakugroup}
 
 \begin{yakugroup}{\term{Shuntsu}{Runs}}
@@ -48,7 +50,7 @@
     \comm{\kuis{Sanshoku Doujun}}{2 han}
     \comm{\kuis{Ikkitsuukan}}{2 han}
     \rare{\kuis{Ryanpeikou}}{3 han}
-    \rare{\clos{Chuuren Poutou}}{Yakuman}
+    \ykmn{\clos{Chuuren Poutou}}
 \end{yakugroup}
 
 \begin{yakugroup}{\term{Koutsu}{Sets}}
@@ -56,10 +58,10 @@
     \rare{\open{Sanankou}}{2 han}
     \rare{\open{Shousangen}}{2 han}
     \rare{\open{Sanshoku Doukou}}{2 han}
-    \rare{\clos{Suuankou}}{Yakuman}
-    \rare{\open{Daisangen}}{Yakuman}
-    \rare{\open{Shousuushi}}{Yakuman}
-    \rare{\open{Daisuushi}}{Yakuman}
+    \ykmn{\clos{Suuankou}}
+    \ykmn{\open{Daisangen}}
+    \ykmn{\open{Shousuushi}}
+    \ykmn{\open{Daisuushi}}
 \end{yakugroup}
 
 \nonewb{
@@ -67,7 +69,7 @@
     \rare{\open{Chankan}}{1 han}
     \rare{\open{Rinshan Kaihou}}{1 han}
     \rare{\open{Sankantsu}}{2 han}
-    \rare{\open{Suukantsu}}{Yakuman}
+    \ykmn{\open{Suukantsu}}
 \end{yakugroup}}
 
 \begin{yakugroup}{Color}
@@ -75,8 +77,8 @@
     \rare{\open{Sanshoku Doukou}}{2 han}
     \comm{\kuis{Honitsu}}{3 han}
     \rare{\kuis{Chinitsu}}{6 han}
-    \rare{\open{Ryuuiisou}}{Yakuman}
-    \rare{\clos{Chuuren Poutou}}{Yakuman}
+    \ykmn{\open{Ryuuiisou}}
+    \ykmn{\clos{Chuuren Poutou}}
 \end{yakugroup}
 
 \begin{yakugroup}{Pure Luck}
@@ -88,14 +90,14 @@
     \rare{\open{Chankan}}{1 han}
     \rare{\clos{Double Riichi}}{2 han}
     \rare{\clos{Renhou}}{$\geq$5 han}
-    \rare{\clos{Tenhou}}{Yakuman}
-    \rare{\clos{Chiihou}}{Yakuman}
+    \ykmn{\clos{Tenhou}}
+    \ykmn{\clos{Chiihou}}
 \end{yakugroup}
 
 \begin{yakugroup}{Non-Standard Shape}
     \comm{\clos{Chiitoitsu}}{2 han}
     \rare{\open{Nagashi Mangan}}{5 han}
-    \rare{\clos{Kokushi Musou}}{Yakuman}
+    \ykmn{\clos{Kokushi Musou}}
 \end{yakugroup}
 
 \begin{yakugroup}{Special}
