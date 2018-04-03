@@ -13,12 +13,20 @@
 
 \newcommand{\comm}[2]{\item #1 \iftoggle{newbie}{}{(#2)}}
 \newcommand{\rare}[2]{\iftoggle{newbie}{}{\item #1 (#2)}}
+\newenvironment{yakugroup}[1]
+{
+\section*{#1}
+\begin{itemize}
+}
+{
+\end{itemize}
+}
+
 \newcommand{\content}
 {
 \vspace*{\fill}
 \begin{multicols}{3}
-\section*{Terminals and Honors}
-\begin{itemize}
+\begin{yakugroup}{Terminals and Honors}
     \comm{\open{Yakuhai}}{1 han}
     \comm{\open{Tanyao}}{1 han}
     \rare{\kuis{Chanta}}{2 han}
@@ -29,19 +37,17 @@
     \rare{\open{Shousuushi}}{Yakuman}
     \rare{\open{Daisuushi}}{Yakuman}
     \rare{\open{Chinroutou}}{Yakuman}
-\end{itemize}
+\end{yakugroup}
 
-\section*{Shuntsu}
-\begin{itemize}
+\begin{yakugroup}{Shuntsu}
     \comm{\clos{Pinfu}}{1 han}
     \comm{\clos{Iipeikou}}{1 han}
     \comm{\kuis{Sanshoku Doujun}}{2 han}
     \comm{\kuis{Ikkitsuukan}}{2 han}
     \rare{\kuis{Ryanpeikou}}{3 han}
-\end{itemize}
+\end{yakugroup}
 
-\section*{Koutsu}
-\begin{itemize}
+\begin{yakugroup}{Koutsu}
     \comm{\open{Toitoi}}{2 han}
     \rare{\open{Sanankou}}{2 han}
     \rare{\open{Shousangen}}{2 han}
@@ -50,29 +56,26 @@
     \rare{\open{Daisangen}}{Yakuman}
     \rare{\open{Shousuushi}}{Yakuman}
     \rare{\open{Daisuushi}}{Yakuman}
-\end{itemize}
+\end{yakugroup}
 
 \iftoggle{newbie}{}{
-\section*{Kantsu}
-\begin{itemize}
+\begin{yakugroup}{Kantsu}
     \rare{\open{Chankan}}{1 han}
     \rare{\open{Rinshan Kaihou}}{1 han}
     \rare{\open{Sankantsu}}{2 han}
     \rare{\open{Suukantsu}}{Yakuman}
-\end{itemize}}
+\end{yakugroup}}
 
-\section*{Color}
-\begin{itemize}
+\begin{yakugroup}{Color}
     \comm{\kuis{Sanshoku Doujun}}{2 han}
     \rare{\open{Sanshoku Doukou}}{2 han}
     \comm{\kuis{Honitsu}}{3 han}
     \rare{\kuis{Chinitsu}}{6 han}
     \rare{\open{Ryuuiisou}}{Yakuman}
     \rare{\clos{Chuuren Poutou}}{Yakuman}
-\end{itemize}
+\end{yakugroup}
 
-\section*{Pure Luck}
-\begin{itemize}
+\begin{yakugroup}{Pure Luck}
     \comm{\clos{Ippatsu}}{1 han}
     \comm{\clos{Menzen Tsumo}}{1 han}
     \rare{\open{Haitei Raoyue}}{1 han}
@@ -83,22 +86,20 @@
     \rare{\clos{Renhou}}{$\geq$5 han}
     \rare{\clos{Tenhou}}{Yakuman}
     \rare{\clos{Chiihou}}{Yakuman}
-\end{itemize}
+\end{yakugroup}
 
-\section*{Non-Standard Shape}
-\begin{itemize}
+\begin{yakugroup}{Non-Standard Shape}
     \comm{\clos{Chiitoitsu}}{2 han}
     \rare{\open{Nagashi Mangan}}{5 han}
     \rare{\clos{Kokushi Musou}}{Yakuman}
-\end{itemize}
+\end{yakugroup}
 
-\section*{Special}
-\begin{itemize}
+\begin{yakugroup}{Special}
     \comm{\clos{Riichi}}{1 han}
     \rare{\clos{Double Riichi}}{2 han}
     \rare{\clos{Open Riichi}}{2 han}
     \rare{\open{Nagashi Mangan}}{5 han}
-\end{itemize}
+\end{yakugroup}
 \end{multicols}
 \vspace*{\fill}
 }
