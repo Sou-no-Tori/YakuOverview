@@ -1,0 +1,112 @@
+\documentclass[]{article}
+\usepackage[landscape,margin=2cm]{geometry}
+\usepackage{multicol}
+\usepackage{color}
+\usepackage{xcolor}
+\usepackage{etoolbox}
+ 
+\newtoggle{newbie}
+
+\newcommand{\open}[1]{\textcolor{green!50!black}{#1}}
+\newcommand{\kuis}[1]{\textcolor{\iftoggle{newbie}{green!50!black}{orange}}{#1}}
+\newcommand{\clos}[1]{\textcolor{red}{#1}}
+
+\newcommand{\comm}[2]{\item #1 \iftoggle{newbie}{}{(#2)}}
+\newcommand{\rare}[2]{\iftoggle{newbie}{}{\item #1 (#2)}}
+\newcommand{\content}
+{
+\vspace*{\fill}
+\begin{multicols}{3}
+\section*{Terminals and Honors}
+\begin{itemize}
+    \comm{\open{Yakuhai}}{1 han}
+    \comm{\open{Tanyao}}{1 han}
+    \rare{\kuis{Chanta}}{2 han}
+    \rare{\open{Honroutou}}{2 han}
+    \rare{\kuis{Junchan}}{3 han}
+    \rare{\open{Daisangen}}{Yakuman}
+    \rare{\open{Tsuuiisou}}{Yakuman}
+    \rare{\open{Shousuushi}}{Yakuman}
+    \rare{\open{Daisuushi}}{Yakuman}
+    \rare{\open{Chinroutou}}{Yakuman}
+\end{itemize}
+
+\section*{Shuntsu}
+\begin{itemize}
+    \comm{\clos{Pinfu}}{1 han}
+    \comm{\clos{Iipeikou}}{1 han}
+    \comm{\kuis{Sanshoku Doujun}}{2 han}
+    \comm{\kuis{Ikkitsuukan}}{2 han}
+    \rare{\kuis{Ryanpeikou}}{3 han}
+\end{itemize}
+
+\section*{Koutsu}
+\begin{itemize}
+    \comm{\open{Toitoi}}{2 han}
+    \rare{\open{Sanankou}}{2 han}
+    \rare{\open{Shousangen}}{2 han}
+    \rare{\open{Sanshoku Doukou}}{2 han}
+    \rare{\clos{Suuankou}}{Yakuman}
+    \rare{\open{Daisangen}}{Yakuman}
+    \rare{\open{Shousuushi}}{Yakuman}
+    \rare{\open{Daisuushi}}{Yakuman}
+\end{itemize}
+
+\iftoggle{newbie}{}{
+\section*{Kantsu}
+\begin{itemize}
+    \rare{\open{Chankan}}{1 han}
+    \rare{\open{Rinshan Kaihou}}{1 han}
+    \rare{\open{Sankantsu}}{2 han}
+    \rare{\open{Suukantsu}}{Yakuman}
+\end{itemize}}
+
+\section*{Color}
+\begin{itemize}
+    \comm{\kuis{Sanshoku Doujun}}{2 han}
+    \rare{\open{Sanshoku Doukou}}{2 han}
+    \comm{\kuis{Honitsu}}{3 han}
+    \rare{\kuis{Chinitsu}}{6 han}
+    \rare{\open{Ryuuiisou}}{Yakuman}
+    \rare{\clos{Chuuren Poutou}}{Yakuman}
+\end{itemize}
+
+\section*{Pure Luck}
+\begin{itemize}
+    \comm{\clos{Ippatsu}}{1 han}
+    \comm{\clos{Menzen Tsumo}}{1 han}
+    \rare{\open{Haitei Raoyue}}{1 han}
+    \rare{\open{Houtei Raoyui}}{1 han}
+    \rare{\open{Rinshan Kaihou}}{1 han}
+    \rare{\open{Chankan}}{1 han}
+    \rare{\clos{Double Riichi}}{2 han}
+    \rare{\clos{Renhou}}{$\geq$5 han}
+    \rare{\clos{Tenhou}}{Yakuman}
+    \rare{\clos{Chiihou}}{Yakuman}
+\end{itemize}
+
+\section*{Non-Standard Shape}
+\begin{itemize}
+    \comm{\clos{Chiitoitsu}}{2 han}
+    \rare{\open{Nagashi Mangan}}{5 han}
+    \rare{\clos{Kokushi Musou}}{Yakuman}
+\end{itemize}
+
+\section*{Special}
+\begin{itemize}
+    \comm{\clos{Riichi}}{1 han}
+    \rare{\clos{Double Riichi}}{2 han}
+    \rare{\clos{Open Riichi}}{2 han}
+    \rare{\open{Nagashi Mangan}}{5 han}
+\end{itemize}
+\end{multicols}
+\vspace*{\fill}
+}
+\begin{document}
+\pagenumbering{gobble}
+\toggletrue{newbie}
+\content
+\newpage
+\togglefalse{newbie}
+\content
+\end{document}
