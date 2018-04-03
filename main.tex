@@ -5,6 +5,7 @@
 \usepackage{xcolor}
 \usepackage{etoolbox}
 \usepackage{ifthen}
+\usepackage{xspace}
  
 \newtoggle{newbie}
 \newtoggle{pro}
@@ -12,6 +13,10 @@
 \newcommand{\nonewb}[1]{\iftoggle{newbie}{}{#1}}
 \newcommand{\newbonly}[1]{\iftoggle{newbie}{#1}{}}
 \newcommand{\pronly}[1]{\iftoggle{pro}{#1}{}}
+
+\input{terms}
+\input{yaku}
+
 \newenvironment{yakugroup}[1]
 {
 \section*{#1}
@@ -21,13 +26,11 @@
 \end{itemize}
 }
 
-\input{yaku}
-
 \newcommand{\content}
 {
 \vspace*{\fill}
 \begin{multicols}{3}
-\begin{yakugroup}{\term{Yaochuuhai}{Terminals and Honors}}
+\begin{yakugroup}{\Yaochuuhai}
     \yakuhai
     \tanyao
     \chanta
@@ -41,7 +44,7 @@
     \chinroutou
 \end{yakugroup}
 
-\begin{yakugroup}{\term{Shuntsu}{Runs}}
+\begin{yakugroup}{\Shuntsu}
     \pinfu
     \iipeikou
     \sanshoku
@@ -50,7 +53,7 @@
     \chuuren
 \end{yakugroup}
 
-\begin{yakugroup}{\term{Koutsu}{Sets}}
+\begin{yakugroup}{\Koutsu}
     \yakuhai
     \toitoi
     \sanankou
@@ -63,14 +66,14 @@
 \end{yakugroup}
 
 \nonewb{
-\begin{yakugroup}{\term{Kantsu}{Quads}}
+\begin{yakugroup}{\Kantsu}
     \chankan
     \rinshan
     \sankantsu
     \suukantsu
 \end{yakugroup}}
 
-\begin{yakugroup}{\term{Shoku}{Suit}}
+\begin{yakugroup}{\Shoku}
     \sanshoku
     \sanshokudoukou
     \honitsu
@@ -81,7 +84,7 @@
 
 \begin{yakugroup}{Pure Luck}
     \ippatsu
-    \tsumo
+    \menzentsumo
     \haitei
     \hoitei
     \rinshan

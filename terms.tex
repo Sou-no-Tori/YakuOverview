@@ -1,0 +1,40 @@
+\newcommand{\useterm}[2]{\iftoggle{pro}{#1}{#2}\xspace}
+\newcommand{\term}[3]
+{
+\newcommand{#1}{\useterm{#2}{#3}}
+}
+\newcommand{\autoterm}[2]
+{
+\expandafter\newcommand\csname #1\endcsname{\useterm{#1}{#2}}
+\expandafter\newcommand\csname #1s\endcsname{\useterm{#1}{#2s}}%
+}
+
+\term{\Yaochuuhai}{Yaochuuhai}{Terminals and Honors}
+\term{\Toitsu}{Toitsu}{Sets}
+\term{\Shuntsu}{Shuntsu}{Runs}
+\term{\Koutsu}{Koutsu}{Sets}
+\term{\Kantsu}{Kantsu}{Quads}
+\term{\Shoku}{Shoku}{Color}
+
+\autoterm{chunchanpai}{2-8}
+\autoterm{yaochuuhai}{1,9,honor}
+\autoterm{routouhai}{1,9}
+\autoterm{mentsu}{group}
+\autoterm{toitsu}{pair}
+\autoterm{shuntsu}{run}
+\autoterm{koutsu}{set}
+\autoterm{kantsu}{quad}
+\autoterm{kan}{quad}
+\autoterm{jihai}{honor}
+\autoterm{sangenpai}{dragon}
+\autoterm{kazehai}{wind}
+\autoterm{ryanmen}{open}
+\autoterm{machi}{wait}
+\autoterm{shoku}{color}
+\autoterm{souzu}{bamboo}
+\autoterm{pinzu}{circle}
+\autoterm{manzu}{character}
+\autoterm{haku}{white dragon}
+\autoterm{hatsu}{green dragon}
+\autoterm{chun}{red dragon}
+\autoterm{tsumo}{self-draw}

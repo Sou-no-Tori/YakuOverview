@@ -1,7 +1,6 @@
 \newcommand{\open}[1]{\textcolor{green!50!black}{#1}}
 \newcommand{\kuis}[1]{\textcolor{\iftoggle{newbie}{green!50!black}{orange}}{#1}}
 \newcommand{\clos}[1]{\textcolor{red}{#1}}
-\newcommand{\term}[2]{\iftoggle{pro}{#1}{#2}}
 
 \newcommand{\comm}[3]{\item #1 \nonewb{(#2 han)}\newbonly{\\\emph{#3}}}
 \newcommand{\rare}[3]{\ifthenelse{\equal{#2}{Yakuman}}{\ykmn{#1}}{\noyk{#1}{#2}}}
@@ -16,44 +15,44 @@
 \newcommand{#1}{#3{#4{#2}}{#5}{#6}}
 }
 
-\yaku{\yakuhai}{Yakuhai}{\comm}{\open}{1}{set of value tiles}
-\yaku{\tanyao}{Tanyao}{\comm}{\open}{1}{only 2-8}
-\yaku{\chanta}{Chanta}{\rare}{\kuis}{2}{1,9,honor in every group}
-\yaku{\honroutou}{Honroutou}{\rare}{\open}{2}{no 2-8}
-\yaku{\junchan}{Junchan}{\rare}{\kuis}{3}{1,9 in every group}
-\yaku{\shousangen}{Shousangen}{\rare}{\open}{2}{two dragon sets, one dragon pair}
-\yaku{\daisangen}{Daisangen}{\rare}{\open}{Yakuman}{three dragon sets}
-\yaku{\tsuuiisou}{Tsuuiisou}{\rare}{\open}{Yakuman}{only honors}
-\yaku{\shousuushi}{Shousuushi}{\rare}{\open}{Yakuman}{three wind sets, one wind pair}
-\yaku{\daisuushi}{Daisuushi}{\rare}{\open}{Yakuman}{four wind sets}
-\yaku{\chinroutou}{Chinroutou}{\rare}{\open}{Yakuman}{only 1,9}
-\yaku{\pinfu}{Pinfu}{\comm}{\clos}{1}{only runs, non-value pair, open wait}
-\yaku{\iipeikou}{Iipeikou}{\comm}{\clos}{1}{same run twice}
-\yaku{\sanshoku}{Sanshoku Doujun}{\comm}{\kuis}{2}{same run all suits}
-\yaku{\ittsu}{Ikkitsuukan}{\comm}{\kuis}{2}{1-9 as three runs}
+\yaku{\yakuhai}{Yakuhai}{\comm}{\open}{1}{\koutsu of value tiles}
+\yaku{\tanyao}{Tanyao}{\comm}{\open}{1}{only \chunchanpai}
+\yaku{\chanta}{Chanta}{\rare}{\kuis}{2}{\yaochuuhai in every \mentsu}
+\yaku{\honroutou}{Honroutou}{\rare}{\open}{2}{no \chunchanpai}
+\yaku{\junchan}{Junchan}{\rare}{\kuis}{3}{\routouhai in every \mentsu}
+\yaku{\shousangen}{Shousangen}{\rare}{\open}{2}{two \sangenpai \koutsus, one \sangenpai \toitsu}
+\yaku{\daisangen}{Daisangen}{\rare}{\open}{Yakuman}{three \sangenpai \koutsus}
+\yaku{\tsuuiisou}{Tsuuiisou}{\rare}{\open}{Yakuman}{only \jihais}
+\yaku{\shousuushi}{Shousuushi}{\rare}{\open}{Yakuman}{three \kazehai \koutsus, one \kazehai \toitsu}
+\yaku{\daisuushi}{Daisuushi}{\rare}{\open}{Yakuman}{four \kazehai \koutsus}
+\yaku{\chinroutou}{Chinroutou}{\rare}{\open}{Yakuman}{only \routouhai}
+\yaku{\pinfu}{Pinfu}{\comm}{\clos}{1}{only \shuntsus, non-value \toitsu, \ryanmen \machi}
+\yaku{\iipeikou}{Iipeikou}{\comm}{\clos}{1}{same \shuntsu twice}
+\yaku{\sanshoku}{Sanshoku Doujun}{\comm}{\kuis}{2}{same \shuntsu all \shokus}
+\yaku{\ittsu}{Ikkitsuukan}{\comm}{\kuis}{2}{1-9 as three \shuntsu}
 \yaku{\ryanpeikou}{Ryanpeikou}{\rare}{\kuis}{3}{iipeikou twice}
-\yaku{\chuuren}{Chuuren Poutou}{\rare}{\clos}{Yakuman}{1112345678999+any of same suit}
-\yaku{\toitoi}{Toitoi}{\comm}{\open}{2}{four sets}
-\yaku{\sanankou}{Sanankou}{\rare}{\open}{2}{three closed sets}
-\yaku{\sanshokudoukou}{Sanshoku Doukou}{\rare}{\open}{2}{same set all suits}
-\yaku{\suuankou}{Suuankou}{\rare}{\clos}{Yakuman}{four closed sets}
-\yaku{\chankan}{Chankan}{\rare}{\open}{1}{win on extended quad}
-\yaku{\rinshan}{Rinshan Kaihou}{\rare}{\open}{1}{win on quad replacement}
-\yaku{\sankantsu}{Sankantsu}{\rare}{\open}{2}{three quads}
-\yaku{\suukantsu}{Suukantsu}{\rare}{\open}{Yakuman}{four quads}
-\yaku{\honitsu}{Honitsu}{\comm}{\kuis}{3}{only one suit + honors}
-\yaku{\chinitsu}{Chinitsu}{\rare}{\kuis}{6}{only one suit}
-\yaku{\ryuuiisou}{Ryuuiisou}{\rare}{\open}{Yakuman}{only bamboo + green dragon}
+\yaku{\chuuren}{Chuuren Poutou}{\rare}{\clos}{Yakuman}{1112345678999+any of same \shoku}
+\yaku{\toitoi}{Toitoi}{\comm}{\open}{2}{four \koutsus}
+\yaku{\sanankou}{Sanankou}{\rare}{\open}{2}{three closed \koutsus}
+\yaku{\sanshokudoukou}{Sanshoku Doukou}{\rare}{\open}{2}{same \koutsu all \shoku}
+\yaku{\suuankou}{Suuankou}{\rare}{\clos}{Yakuman}{four closed \koutsus}
+\yaku{\chankan}{Chankan}{\rare}{\open}{1}{win on extended \kantsu}
+\yaku{\rinshan}{Rinshan Kaihou}{\rare}{\open}{1}{win on \kan replacement}
+\yaku{\sankantsu}{Sankantsu}{\rare}{\open}{2}{three \kantsus}
+\yaku{\suukantsu}{Suukantsu}{\rare}{\open}{Yakuman}{four \kantsus}
+\yaku{\honitsu}{Honitsu}{\comm}{\kuis}{3}{only one \shoku + \jihais}
+\yaku{\chinitsu}{Chinitsu}{\rare}{\kuis}{6}{only one \shoku}
+\yaku{\ryuuiisou}{Ryuuiisou}{\rare}{\open}{Yakuman}{only \souzu + \hatsus}
 \yaku{\ippatsu}{Ippatsu}{\comm}{\clos}{1}{win directly after riichi}
-\yaku{\tsumo}{Menzen Tsumo}{\comm}{\clos}{1}{closed tsumo}
-\yaku{\haitei}{Haitei Raoyue}{\rare}{\open}{1}{tsumo last tile}
+\yaku{\menzentsumo}{Menzen Tsumo}{\comm}{\clos}{1}{closed \tsumo}
+\yaku{\haitei}{Haitei Raoyue}{\rare}{\open}{1}{\tsumo last tile}
 \yaku{\hoitei}{Houtei Raoyui}{\rare}{\open}{1}{ron last tile}
 \yaku{\doubleriichi}{Double Riichi}{\rare}{\clos}{2}{first turn riichi}
 \yaku{\renhou}{Renhou}{\rare}{\clos}{at least 5}{first turn ron}
-\yaku{\chiihou}{Chiihou}{\rare}{\clos}{Yakuman}{first turn tsumo}
-\yaku{\tenhou}{Tenhou}{\rare}{\clos}{Yakuman}{first turn tsumo dealer}
-\yaku{\chiitoi}{Chiitoitsu}{\comm}{\clos}{2}{seven pairs}
+\yaku{\chiihou}{Chiihou}{\rare}{\clos}{Yakuman}{first turn \tsumo}
+\yaku{\tenhou}{Tenhou}{\rare}{\clos}{Yakuman}{first turn \tsumo dealer}
+\yaku{\chiitoi}{Chiitoitsu}{\comm}{\clos}{2}{seven \toitsus}
 \yaku{\nagashi}{Nagashi Mangan}{\rare}{\open}{5}{only terminals+honors discarded}
-\yaku{\kokushi}{Kokushi Musou}{\rare}{\clos}{Yakuman}{all of 1,9,honors, one pair}
+\yaku{\kokushi}{Kokushi Musou}{\rare}{\clos}{Yakuman}{all of \yaochuuhais, one pair}
 \yaku{\riichi}{Riichi}{\comm}{\clos}{1}{declare closed tenpai}
 \yaku{\openriichi}{Open Riichi}{\rare}{\clos}{2}{riichi with revealed wait}
