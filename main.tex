@@ -9,13 +9,14 @@
 \newtoggle{pro}
 
 \newcommand{\nonewb}[1]{\iftoggle{newbie}{}{#1}}
+\newcommand{\newbonly}[1]{\iftoggle{newbie}{#1}{}}
 \newcommand{\pronly}[1]{\iftoggle{pro}{#1}{}}
 \newcommand{\open}[1]{\textcolor{green!50!black}{#1}}
 \newcommand{\kuis}[1]{\textcolor{\iftoggle{newbie}{green!50!black}{orange}}{#1}}
 \newcommand{\clos}[1]{\textcolor{red}{#1}}
 \newcommand{\term}[2]{\iftoggle{pro}{#1}{#2}}
 
-\newcommand{\comm}[2]{\item #1 \nonewb{(#2)}}
+\newcommand{\comm}[3]{\item #1 \nonewb{(#2)}\newbonly{\\\emph{#3}}}
 \newcommand{\rare}[2]{\nonewb{\item #1 (#2)}}
 \newcommand{\ykmn}[1]{\pronly{\item #1 (Yakuman)}}
 \newenvironment{yakugroup}[1]
@@ -32,8 +33,8 @@
 \vspace*{\fill}
 \begin{multicols}{3}
 \begin{yakugroup}{\term{Yaochuuhai}{Terminals and Honors}}
-    \comm{\open{Yakuhai}}{1 han}
-    \comm{\open{Tanyao}}{1 han}
+    \comm{\open{Yakuhai}}{1 han}{triplet of value tiles}
+    \comm{\open{Tanyao}}{1 han}{only 2-8}
     \rare{\kuis{Chanta}}{2 han}
     \rare{\open{Honroutou}}{2 han}
     \rare{\kuis{Junchan}}{3 han}
@@ -45,16 +46,16 @@
 \end{yakugroup}
 
 \begin{yakugroup}{\term{Shuntsu}{Runs}}
-    \comm{\clos{Pinfu}}{1 han}
-    \comm{\clos{Iipeikou}}{1 han}
-    \comm{\kuis{Sanshoku Doujun}}{2 han}
-    \comm{\kuis{Ikkitsuukan}}{2 han}
+    \comm{\clos{Pinfu}}{1 han}{only runs, non value pair, open wait}
+    \comm{\clos{Iipeikou}}{1 han}{same run twice}
+    \comm{\kuis{Sanshoku Doujun}}{2 han}{same run all colors}
+    \comm{\kuis{Ikkitsuukan}}{2 han}{1-9 as three runs}
     \rare{\kuis{Ryanpeikou}}{3 han}
     \ykmn{\clos{Chuuren Poutou}}
 \end{yakugroup}
 
 \begin{yakugroup}{\term{Koutsu}{Sets}}
-    \comm{\open{Toitoi}}{2 han}
+    \comm{\open{Toitoi}}{2 han}{four sets}
     \rare{\open{Sanankou}}{2 han}
     \rare{\open{Shousangen}}{2 han}
     \rare{\open{Sanshoku Doukou}}{2 han}
@@ -72,18 +73,18 @@
     \ykmn{\open{Suukantsu}}
 \end{yakugroup}}
 
-\begin{yakugroup}{\term{Shoku}{Color}}
-    \comm{\kuis{Sanshoku Doujun}}{2 han}
+\begin{yakugroup}{\term{Shoku}{Suit}}
+    \comm{\kuis{Sanshoku Doujun}}{2 han}{same run all colors}
     \rare{\open{Sanshoku Doukou}}{2 han}
-    \comm{\kuis{Honitsu}}{3 han}
+    \comm{\kuis{Honitsu}}{3 han}{only one suit + honors}
     \rare{\kuis{Chinitsu}}{6 han}
     \ykmn{\open{Ryuuiisou}}
     \ykmn{\clos{Chuuren Poutou}}
 \end{yakugroup}
 
 \begin{yakugroup}{Pure Luck}
-    \comm{\clos{Ippatsu}}{1 han}
-    \comm{\clos{Menzen Tsumo}}{1 han}
+    \comm{\clos{Ippatsu}}{1 han}{win directly after riichi}
+    \comm{\clos{Menzen Tsumo}}{1 han}{closed hand tsumo}
     \rare{\open{Haitei Raoyue}}{1 han}
     \rare{\open{Houtei Raoyui}}{1 han}
     \rare{\open{Rinshan Kaihou}}{1 han}
@@ -95,13 +96,13 @@
 \end{yakugroup}
 
 \begin{yakugroup}{Non-Standard Shape}
-    \comm{\clos{Chiitoitsu}}{2 han}
+    \comm{\clos{Chiitoitsu}}{2 han}{seven pairs}
     \rare{\open{Nagashi Mangan}}{5 han}
     \ykmn{\clos{Kokushi Musou}}
 \end{yakugroup}
 
 \begin{yakugroup}{Special}
-    \comm{\clos{Riichi}}{1 han}
+    \comm{\clos{Riichi}}{1 han}{declare when closed tenpai}
     \rare{\clos{Double Riichi}}{2 han}
     \rare{\clos{Open Riichi}}{2 han}
     \rare{\open{Nagashi Mangan}}{5 han}
