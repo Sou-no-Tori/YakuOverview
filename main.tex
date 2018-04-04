@@ -6,6 +6,8 @@
 \usepackage{etoolbox}
 \usepackage{ifthen}
 \usepackage{xspace}
+\usepackage{environ}
+\usepackage{ifmtarg}
  
 \newtoggle{newbie}
 \newtoggle{pro}
@@ -27,12 +29,11 @@
 {
 \end{itemize}
 }
+\NewEnviron{yakusubgroup}[1]
+{
+\iftoggle{sub}{\subsection*{#1}\item[]\begin{itemize}}
 
-\newenvironment{yakusubgroup}[1]
-{\iftoggle{sub}{\subsection*{#1}\item[]\begin{itemize}}
-
-}
-{\iftoggle{sub}{\end{itemize}}
+\BODY\iftoggle{sub}{\end{itemize}}
 
 }
 
@@ -64,6 +65,7 @@
 \newpage
 \toggletrue{pro}
 \content
+\newpage
 \toggletrue{sub}
 \content
 \end{document}
