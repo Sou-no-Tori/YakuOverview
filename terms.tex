@@ -1,9 +1,15 @@
 \newcommand{\useterm}[2]{\iftoggle{japanese}{#1}{#2}\xspace}
+\newcommand{\usedumbterm}[2]{\iftoggle{engrish}{#1}{#2}\xspace}
 \newcommand{\term}[3]
 {
 \newcommand{#1}{\useterm{#2}{#3}}
 }
 \newcommand{\autoterm}[2]
+{
+\expandafter\newcommand\csname #1\endcsname{\useterm{#1}{#2}}
+\expandafter\newcommand\csname #1s\endcsname{\useterm{#1}{#2s}}%
+}
+\newcommand{\dumbterm}[2]
 {
 \expandafter\newcommand\csname #1\endcsname{\useterm{#1}{#2}}
 \expandafter\newcommand\csname #1s\endcsname{\useterm{#1}{#2s}}%
@@ -22,8 +28,8 @@
 \autoterm{Guuzen}{Chance}
 
 \autoterm{chunchanpai}{2-8}
-\autoterm{yaochuuhai}{1,9,honor}
-\autoterm{routouhai}{1,9}
+\autoterm{yaochuuhai}{1, 9, honor}
+\autoterm{routouhai}{1, 9}
 \autoterm{mentsu}{group}
 \autoterm{toitsu}{pair}
 \autoterm{shuntsu}{run}
@@ -50,3 +56,12 @@
 \autoterm{hatsu}{green dragon}
 \autoterm{chun}{red dragon}
 \autoterm{tsumo}{self-draw}
+\dumbterm{ii}{one}
+\dumbterm{ryan}{two}
+\dumbterm{san}{three}
+\dumbterm{suu}{four}
+\dumbterm{uu}{five}
+\dumbterm{ryuu}{six}
+\dumbterm{chii}{seven}
+\dumbterm{paa}{eight}
+\dumbterm{chuu}{nine}
